@@ -1,0 +1,40 @@
+conky.config = {
+    background = true,
+    update_interval = 1,
+    double_buffer = true,
+    own_window = true,
+    own_window_type = 'desktop',
+    own_window_transparent = true,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_argb_visual = true,
+    own_window_argb_value = 150, -- Semi-transparent for blending
+    alignment = 'top_left',
+    gap_x = 20,
+    gap_y = 15,
+    minimum_width = 600,
+    maximum_width = 600,
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    default_color = '#E0E0E0',
+    use_xft = true,
+    font = 'SF Pro Text:size=14',
+    own_window_class = 'Conky',
+    own_window_title = 'iOS Style Widget',
+};
+
+conky.text = [[
+${voffset 10}${font SF Pro Display:bold:size=72}${time %H:%M:%S}${font}
+
+${voffset -15}${font SF Pro Text:size=26}  ${time %A, %B %d}${font}
+
+${color #E0E0E0}${font SF Pro Text:bold:size=16}System Stats${font}
+${voffset 5}${font SF Pro Text:size=14}CPU: ${cpu}% ${cpubar 4,200}
+RAM: ${mem} / ${memmax} ${membar 4,200}
+Disk: ${fs_used /} / ${fs_size /} ${fs_bar 4,200}
+
+${color #E0E0E0}${font SF Pro Text:bold:size=16}Network${font}
+${voffset 5}${font SF Pro Text:size=14}IP: ${addr wlp0s20f3}
+Download: ${downspeed wlp0s20f3} 
+Upload: ${upspeed wlp0s20f3}
+]];  -- copy the code in the conky config file and run it and edit it to suit your needs
